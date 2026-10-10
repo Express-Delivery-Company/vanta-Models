@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#130d10">
+  <meta name="description" content="A curated 18+ fashion and glamour model directory. Every private set is locked.">
+  <title>Vanta Room — Model Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500;1,6..96,600&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="Velvet Room home"><span class="brand-mark">V</span><span>Vanta Room <small>Model Index</small></span></a>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="#directory">Roster <span>15</span></a>
+      <a href="#about">About</a>
+      <a class="member-link" href="#directory">18+ <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="shell hero" aria-labelledby="heroTitle">
+      <div class="hero-copy-block" id="about">
+        <div class="eyebrow"><span>Independent model index</span><span>Issue 01 / 18+</span></div>
+        <h1 id="heroTitle">Look a little<br><em>closer.</em></h1>
+        <p class="hero-copy">Meet the faces of Vanta Room. Explore the roster, then follow your favorites to Telegram. Private sets stay locked in this preview.</p>
+        <a class="hero-link" href="#directory">Browse the roster <span aria-hidden="true">↓</span></a>
+        <div class="hero-footnote"><span>15 PROFILES</span><span>01—15</span><span>GLOBAL ROSTER</span></div>
+      </div>
+      <figure class="hero-visual">
+        <img src="media/valerie2.jpg" alt="">
+        <span class="visual-index">Top <small>/ MODEL</small></span>
+        <figcaption class="visual-caption"><span>Featured profile</span><strong>Valerie Rose</strong><small>Amsterdam · 29</small></figcaption>
+        <span class="visual-side-note" aria-hidden="true">PORTRAIT 001 — VANTA ROOM</span>
+      </figure>
+    </section>
+
+    <section class="shell" id="directory" aria-label="Model directory">
+      <div class="section-head">
+        <div><span class="section-kicker">01 / Current roster</span><h2>Model index<span>—</span></h2></div>
+        <p>Tap a portrait to reveal its locked preview.</p>
+      </div>
+      <div class="roster-bar">
+        <div class="roster-count"><strong id="resultCount">15</strong> profiles</div>
+        <div class="controls" role="group" aria-label="Filter models">
+          <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="women" aria-pressed="false">Women</button>
+          <button class="filter" data-filter="new" aria-pressed="false">New</button>
+        </div>
+        <label class="search">
+          <span class="sr-only">Search models</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="searchInput" type="search" placeholder="Search name or city" autocomplete="off">
+        </label>
+      </div>
+      <div class="directory">
+        <div class="grid" id="modelGrid" aria-live="polite"></div>
+        <div class="empty" id="emptyState">No faces found. Try another search.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell bottom-note">
+    <span>© 2026 Vanta Room <span class="age-note">· All featured models are 18+</span></span>
+    <span>All private galleries are locked in this preview.</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"><b>Private set locked.</b> This preview can’t be opened.</div>
+
+  <script>
+    const models = [
+      { name: 'Lizet Moretti', age: 29, city: 'Paris', type: 'women', tag: 'Featured', photo: 'media/lizet.jpg' },
+      { name: 'Sicilia Billions', age: 32, city: 'London', type: 'women', tag: 'New face', photo: 'media/sicilia.jpg' },
+      { name: 'Liliana Jasmine', age: 30, city: 'New York', type: 'women', tag: 'New face', photo: 'media/liliana.jpg' },
+      { name: 'Bronze Goddess', age: 29, city: 'Milan', type: 'women', tag: 'Featured', photo: 'media/bronze.jpg' },
+      { name: 'Salome Munoze', age: 28, city: 'Los Angeles', type: 'women', tag: 'New face', photo: 'media/salome.jpg' },
+      { name: 'Bec Gorton', age: 29, city: 'Copenhagen', type: 'women', tag: 'Editorial', photo: 'media/bec.jpg' },
+      { name: 'Annabelle Pingol', age: 28, city: 'Berlin', type: 'women', tag: 'New face', photo: 'media/annabelle.jpg' },
+      { name: 'Savannah Banks', age: 33, city: 'Lisbon', type: 'women', tag: 'Featured', photo: 'media/savannnah.jpg' },
+      { name: 'Valerie Rose', age: 29, city: 'Amsterdam', type: 'women', tag: 'Top', photo: 'media/valerie.jpg' },
+      { name: 'Eva Marie', age: 30, city: 'Barcelona', type: 'women', tag: 'Featured', photo: 'media/eva.jpg' },
+      { name: 'Dolores Figueroa', age: 27, city: 'Mexico', type: 'women', tag: 'New face', photo: 'media/dol.jpg' },
+      { name: 'Nikki Lynn', age: 39, city: 'Rio de Janeiro', type: 'women', tag: 'Editorial', photo: 'media/nikki.jpg' },
+      { name: 'Olga Seteykina', age: 29, city: 'Toronto', type: 'women', tag: 'Featured', photo: 'media/olga.jpg' },
+
+      { name: 'Arii', age: 26, city: 'Melbourne', type: 'women', tag: 'New face', photo: 'media/arii.jpg' },
+
+      { name: 'Maya Sol', age: 28, city: 'Mexico City', type: 'women', tag: 'Editorial', photo: 'media/maya.jpg' }
+    ];
+
+    const grid = document.getElementById('modelGrid');
+    const searchInput = document.getElementById('searchInput');
+    const resultCount = document.getElementById('resultCount');
+    const emptyState = document.getElementById('emptyState');
+    const toast = document.getElementById('toast');
+    const TELEGRAM_URL = 'https://t.me/your_username'; // Replace with your Telegram username or link.
+    let currentFilter = 'all';
+    let toastTimeout;
+
+    const lockMarkup = '<span class="locked-layer" aria-hidden="true"><span class="lock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="1.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v3"></path></svg></span><span class="locked-title">Private set locked</span><span class="locked-caption">Preview unavailable</span></span>';
+
+    function renderCards() {
+      const query = searchInput.value.trim().toLowerCase();
+      const visible = models.filter(model => {
+        const matchesFilter = currentFilter === 'all' || model.type === currentFilter || (currentFilter === 'new' && model.tag === 'New face');
+        const matchesQuery = `${model.name} ${model.city} ${model.tag}`.toLowerCase().includes(query);
+        return matchesFilter && matchesQuery;
+      });
+      resultCount.textContent = visible.length;
+      emptyState.style.display = visible.length ? 'none' : 'block';
+      grid.innerHTML = visible.map((model, index) => {
+        const modelNumber = String(models.indexOf(model) + 1).padStart(2, '0');
+        const photoSrc = model.photo.startsWith('photo-')
+          ? `https://images.unsplash.com/${model.photo}?auto=format&fit=crop&w=900&q=84`
+          : model.photo;
+        return `
+          <article class="model-card" data-name="${model.name}">
+            <div class="portrait-wrap">
+              <button class="portrait-button" type="button" aria-pressed="false" aria-label="Preview ${model.name}'s private set. Locked content.">
+                <img src="${photoSrc}" alt="Fashion portrait of ${model.name}" ${index > 4 ? 'loading="lazy"' : 'fetchpriority="high"'}>
+                <span class="portrait-label">${model.tag}</span>
+                <span class="portrait-number">${modelNumber}</span>
+                ${lockMarkup}
+              </button>
+              <a class="telegram-button" href="${TELEGRAM_URL}" target="_blank" rel="noopener noreferrer">View on Telegram <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="card-details">
+              <div class="card-meta"><span>${model.city}</span><span>${model.age}</span></div>
+              <h3 class="card-name">${model.name}</h3>
+            </div>
+          </article>`;
+      }).join('');
+      grid.querySelectorAll('.portrait-button').forEach(button => button.addEventListener('click', () => {
+        const card = button.closest('.model-card');
+        card.classList.add('is-locked');
+        button.setAttribute('aria-pressed', 'true');
+        button.setAttribute('aria-label', `${card.dataset.name}'s private set is locked. Preview unavailable.`);
+        clearTimeout(toastTimeout);
+        toast.classList.add('show');
+        toastTimeout = setTimeout(() => toast.classList.remove('show'), 2600);
+      }));
+    }
+
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      currentFilter = button.dataset.filter;
+      renderCards();
+    }));
+    searchInput.addEventListener('input', renderCards);
+    const menuButton = document.getElementById('menuButton');
+    const nav = document.getElementById('nav');
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+    }));
+    renderCards();
+  </script>
+</body>
+</html>
